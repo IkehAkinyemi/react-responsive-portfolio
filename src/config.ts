@@ -1,0 +1,10 @@
+export const homeURL = '/home';
+export const experienceURL = '/experience';
+export const contactURL = '/contact';
+export const personalEmail = 'mrikehchukwuka@gmail.com';
+export const personalPhoneNumber = '+234 903 xxxx xxx';
+export const personalLocation = 'Nigeria, Africa';
+export const linkedInURL = 'https://www.linkedin.com/in/ikeh-chukwuka-b17415193/';
+export const gitHubURL = 'https://github.com/IkehAkinyemi';
+export const twitterURL = 'https://twitter.com/IkehAkinyemi';
+export const appTitle = 'opengravitas';

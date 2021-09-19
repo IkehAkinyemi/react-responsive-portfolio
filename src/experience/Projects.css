@@ -1,0 +1,631 @@
+:root {
+  --dark-purple: #19323c;
+  --light-purple: #355967;
+  --very-light-purple: #f2545b;
+  --yellow: #f2545b;
+
+  --text-color: #f3f7f0;
+
+  --container-width: 85%;
+  --lg-space: 50px;
+  --md-space: 35px;
+  --sm-space: 15px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+/* ======================= Animations Begins Here ===================== */
+.pop {
+  animation: pop 0.4s forwards ease;
+  -webkit-animation: pop 0.4s forwards ease;
+}
+@keyframes pop {
+  0% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+  }
+  100% {
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+  }
+}
+
+.slide-up {
+  animation: slide-up 1s forwards ease;
+  -webkit-animation: slide-up 1s forwards ease;
+}
+@keyframes slide-up {
+  0% {
+    transform: translateY(50px);
+    -webkit-transform: translateY(50px);
+    -moz-transform: translateY(50px);
+    -ms-transform: translateY(50px);
+    -o-transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.7s forwards ease;
+  -webkit-animation: fade-in 0.7s forwards ease;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* ======================= Animations Ends Here ===================== */
+
+/* scroll-behavior must be added to the html element to enable good scrolling effect for the entire page.
+If this property is set elsewhere, the desired effect won't work, it has to be the html tag */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--dark-purple);
+  overflow-x: hidden;
+  color: var(--text-color);
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+button {
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+.dim-background {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 11;
+  background-color: #19323c;
+}
+.photo-holder {
+  position: absolute;
+  width: 80%;
+  max-width: 800px;
+  height: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  box-shadow: 0 3 10px 10px black;
+  background-color: white;
+}
+
+.container {
+  display: non;
+  width: var(--container-width);
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: var(--dark-purple);
+  width: 100%;
+  padding: 0 7.8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  width: 130px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: larger;
+  font-weight: bolder;
+  color: white;
+  background-size: 120px;
+  background-position: center;
+  background-color: var(--yellow);
+  align-self: flex-start;
+}
+.menu,
+.close-menu {
+  cursor: pointer;
+  display: none;
+}
+.menu-items {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+}
+.nav-skills,
+.nav-resume {
+  color: var(--text-color);
+  font-size: 13px;
+}
+.nav-skills:hover,
+.nav-resume:hover {
+  text-decoration: underline;
+}
+/* all yellow buttons */
+.colored-btn {
+  padding: 15px 25px;
+  border: none;
+  background-color: var(--yellow);
+  color: white !important;
+  font-size: 12px;
+  cursor: pointer;
+}
+.colored-btn:hover {
+  background: none;
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+}
+.main {
+  margin-top: 140px;
+}
+.intro {
+  text-align: center;
+  margin: 0 auto;
+}
+.memoji {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto;
+  margin-bottom: var(--md-space);
+  background-size: 120px;
+  background-position: center;
+  background-color: var(--light-purple);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.intro-hi {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  animation-delay: 0.5s;
+  visibility: hidden;
+}
+.intro-name {
+  color: var(--yellow);
+  margin-bottom: var(--md-space);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -1px;
+  animation-delay: 0.7s;
+  visibility: hidden;
+}
+.intro-name--emphasis {
+  color: var(--text-color);
+}
+.intro-about-me {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: var(--md-space);
+  animation-delay: 0.9s;
+  visibility: hidden;
+}
+.intro-my-works-btn {
+  padding: 15px 50px;
+  margin-bottom: var(--sm-space);
+  animation-delay: 1.2s;
+  visibility: hidden;
+}
+.intro-too-fancy {
+  text-decoration: underline;
+  color: var(--yellow);
+  cursor: pointer;
+  margin-bottom: var(--lg-space);
+  opacity: 0;
+  animation-delay: 1.6s;
+}
+
+/* ----------------- SKILLS -------------- */
+.skills {
+  margin-bottom: var(--lg-space);
+}
+.header {
+  color: var(--yellow);
+  font-size: 1.2rem;
+  margin-bottom: var(--sm-space);
+}
+hr {
+  background-color: var(--text-color);
+  border: none;
+  height: 1px;
+  opacity: 0.2;
+  margin-bottom: var(--md-space);
+}
+.all-skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1.5em;
+}
+.my-skills {
+  display: flex;
+  align-items: center;
+  padding: 25px 20px;
+  background-color: var(--light-purple);
+  gap: 25px;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  border-top-left-radius: 0px;
+}
+.my-skills-logo {
+  min-width: 10px;
+  min-height: 50px;
+}
+.my-skills-name {
+  font-size: 0.8rem;
+  line-height: 1.3;
+  word-break: break-word;
+}
+.javacsript-logo {
+  background-color: #ffda61;
+}
+.react-logo {
+  background-color: #ece5f0;
+}
+.typescript-logo {
+  background-color: #849324;
+}
+.css-logo {
+  background-color: rgb(35, 49, 255);
+}
+.html-logo {
+  background-color: #ff8528;
+}
+.rwd-logo {
+  background-color: rgb(98, 202, 168);
+}
+.api-logo {
+  background-color: #00b66a;
+}
+.git-logo {
+  background-color: #f82953;
+}
+.photoshop-logo {
+  background-color: #0065bd;
+}
+.xd-logo {
+  background-color: #af2ac4;
+}
+.invision-logo {
+  background-color: #ff207d;
+}
+.illustrator-logo {
+  background-color: #ff941b;
+}
+
+/* ----------------- WORKS  -------------- */
+.works-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+#developer-btn {
+  display: none !important;
+}
+.fields-btn {
+  margin-bottom: -15px;
+  cursor: pointer;
+}
+.fields-designer-btn {
+  margin-left: 20px;
+}
+.fields-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+}
+.fields-btn:hover {
+  text-decoration: underline;
+}
+/* remove this after javascript implementation */
+.colored-btn {
+  padding: 15px 25px;
+  border: none;
+  background-color: var(--yellow);
+  font-size: 12px;
+  cursor: pointer;
+  color: var(--dark-purple);
+}
+.colored-btn:hover {
+  text-decoration: none;
+}
+
+/* works as a developer */
+.works-as-a-developer {
+  display: non;
+}
+.works-as-a-developer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1.5em;
+  margin-bottom: var(--lg-space);
+}
+.project {
+  background-color: var(--light-purple);
+  height: 300px;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  position: relative;
+  cursor: pointer;
+}
+.SpinWhot {
+   background-size: cover;
+  background-position: center;
+}
+.Wejapa-To-Dos {
+  background-size: cover;
+  background-position: center;
+}
+.NumToWord {
+  background-size: cover;
+  background-position: center;
+}
+.Dotch {
+  background-size: cover;
+  background-position: center;
+}
+.guessme {
+  background-size: cover;
+  background-position: center;
+}
+.lovelife {
+  background-size: cover;
+  background-position: center;
+}
+.gravitas {
+  background-size: cover;
+  background-position: center;
+}
+.color-generator {
+  background-size: cover;
+  background-position: center;
+}
+.project-name-holder {
+  position: absolute;
+  left: 0;
+  bottom: 25px;
+  background-color: var(--light-purple);
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.works-hover-state {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding: 30px;
+  background-color: rgba(52, 46, 56, 0.9);
+  height: inherit;
+  border-radius: inherit;
+  -webkit-border-radius: inherit;
+  -moz-border-radius: inherit;
+  -ms-border-radius: inherit;
+  -o-border-radius: inherit;
+  display: flex;
+  flex-direction: column;
+  display: none;
+}
+.works-hover-state-name {
+  color: var(--yellow);
+  font-size: 1.2rem;
+  margin-bottom: var(--sm-space);
+}
+.works-hover-state-desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: var(--sm-space);
+  height: 150px;
+  overflow: scroll;
+}
+.works-hover-state-code,
+.works-hover-state-demo {
+  color: var(--text-color);
+  border: 1px solid var(--very-light-purple);
+  padding: 10px 25px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  font-family: "Raleway", sans-serif;
+}
+.works-hover-state-code {
+  background: none;
+  margin-right: 10px;
+  padding: 10px;
+}
+.works-hover-state-demo {
+  background-color: var(--very-light-purple);
+}
+
+/* ----------------- CONTACT ME  -------------- */
+.contact-links {
+  display: flex;
+  margin-bottom: var(--lg-space);
+}
+.contacts {
+  height: 50px;
+  width: 50px;
+  background-color: var(--light-purple);
+  margin-right: 30px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+svg {
+  width: 25px;
+  height: 25px;
+}
+path {
+  fill: var(--text-color);
+}
+.contacts:hover path {
+  fill: var(--yellow);
+}
+.copyright {
+  text-align: center;
+  font-size: 0.7rem;
+  position: relative;
+  bottom: 0;
+  margin-bottom: var(--sm-space);
+}
+
+/* ======================= MOBILE VIEW ======================== */
+@media only screen and (max-width: 900px) {
+  .photo-holder {
+    position: absolute;
+    width: 80%;
+    height: 70%;
+  }
+  .pattern {
+    width: 90vw;
+  }
+  .container {
+    width: 90%;
+  }
+  .logo {
+    width: 130px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+    background-size: 90px;
+    background-position: center;
+    background-color: var(--yellow);
+  }
+  .nav {
+    padding: 0 5%;
+  }
+  .menu,
+  .close-menu {
+    display: flex;
+  }
+  .close-menu {
+    margin-left: 70%;
+  }
+  .close-menu svg {
+    width: 20px;
+    height: 20px;
+  }
+  .menu-items {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    padding-top: var(--lg-space);
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: #19323c;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .menu-items button {
+    margin-top: var(--lg-space);
+  }
+  .intro br {
+    display: none;
+  }
+  .colored-btn:hover {
+    background-color: none;
+    color: var(--text-color);
+  }
+  .works-as-a-developer,
+  .all-skills,
+  .works-as-a-designer {
+    grid-template-columns: 1fr 1fr;
+  }
+  .simple-view {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .photo-holder {
+    position: absolute;
+    width: 80%;
+    height: 25%;
+    top: 30%;
+  }
+  .menu svg {
+    width: 25px;
+    height: 25px;
+  }
+  .header {
+    font-size: 1.1rem;
+  }
+  .all-skills,
+  .works-as-a-developer {
+    grid-template-columns: 1fr;
+  }
+  .colored-btn:hover {
+    background: none;
+    color: var(--yellow);
+    border: 1px solid var(--yellow);
+  }
+  .contacts {
+    width: 35px;
+    height: 35px;
+  }
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
