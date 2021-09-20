@@ -11,7 +11,7 @@ const useMediaMax = (breakpoint: number): boolean => {
     const handler = () => setMatches(mediaQueryList.matches);
     mediaQueryList.addEventListener('change', handler);
     return () => mediaQueryList.removeEventListener('change', handler);
-  }, []);
+  }, [mediaQueryList]);
 
   return matches;
 };
